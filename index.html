@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you - Boys of TT9</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper flap">
+            <div class="envelope">
+                <div class="letter">
+                    <div id="letter-text" class="text">
+                        <strong id="regards">
+                            Gửi bạn nữ thân yêu của lớp TT9,
+                        </strong>
+                        <p id="wishes">
+                            Đây là một lời chúc 8/3 dành tặng bạn. Chúc bạn luôn xinh đẹp, tươi tắn và đạt được ước mơ của bạn nhé!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id');
+        
+        if (id == null)
+            window.location = "login.html";
+
+        const Names = [
+            'anonymous',
+            'Phương Anh',
+            'Thái Bảo',
+            'Quang Tiến',
+            'Hải Ly',
+            'Thúy Nguyên',
+            'Đức Bảo',
+            'Quang Trường',
+            'Ngọc Bảo',
+            'Lê Hoàng',
+            'Khải Hoàng',
+            'Thành Đạt',
+            'Trà My',
+            'Thế Phương',
+            'Lan Anh',
+            'Minh Duy',
+            'Minh Trung',
+            'Trang Hân',
+            'Thu Hiền 2',
+            'Thùy Dung',
+            'Tú Uyên',
+            'Trọng Trí',
+            'Quốc An',
+            'Phương Thảo',
+            'Tấn Khôi',
+            'Trường An',
+            'Ngọc Hòa',
+            'Mỹ Thuyền',
+            'Thu Hiền 1',
+            'Lê Uyên',
+            'Lương Trà My',
+            'Văn Thứ',
+            'Nguyễn Thông',
+            'Thanh Vân',
+            'Xuân Đạt',
+            'Quang Hưng'
+        ];
+
+        const contents = [
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            ''
+        ];
+
+        let name = Names[id];
+        let content = contents[id];
+        if (name != 'anonymous') {
+            document.getElementById('regards').innerHTML = "Gửi " + name;
+            document.getElementById('wishes').innerHTML = content;
+        }
+
+        const envelope = document.querySelector('.envelope-wrapper');
+
+        envelope.classList.toggle('flap');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>

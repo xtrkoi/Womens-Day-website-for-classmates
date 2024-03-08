@@ -1,0 +1,125 @@
+:root {
+    --primary: #fff;
+    --bg-color: #05353d;
+    --bg-envelope-color: #f5edd1;
+    --envelope-tab: #ecdeb8;
+    --envelope-cover: #e6cfa7;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --text-color: #afafaf;
+    --text-color-secondary: #fff;
+    --heart-color: #fc08e7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 280px;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border-bottom: 2px ; */
+}
+
+.label {
+    outline: none;
+    border: none;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    padding: 0.25rem 0;
+    background: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    border-bottom: 2px dashed #afafaf;
+    margin: 1.5rem auto 1rem;
+}
+
+.field::after {
+    content: '';
+    position: relative;
+    height: 4px;
+    width: 100%;
+    background: #d16dff;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: transform 500ms ease;
+    top: 2px;
+}
+
+.field:focus-within {
+    border-color: transparent;
+}
+
+.field:focus-within::after {
+    transform: scaleX(1);
+}
+
+/* Label animation */
+
+.label {
+    z-index: -1;
+    position: absolute;
+    transform-origin: 0%;
+    transition: transform 400ms;
+}
+
+.field:focus-within .label, .input:not(:placeholder-shown) + .label {
+    transform: scale(0.8) translateY(-2rem);
+}
+
+/* Button */
+
+.btn {
+    outline: none;
+    border: none;
+    background: #fc08e7;
+    height: 1.5rem;
+    width: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+form > .btn {
+    margin-top: 1rem;
+}
