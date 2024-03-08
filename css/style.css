@@ -119,7 +119,7 @@ body {
 .flap > .envelope > .letter {
     bottom: 100px;
     transition: all .75s ease-out;
-    transform: translateY(-6rem) scale(1.5);
+    transform: translateY(-4rem) scale(1.5);
     transition-delay: 1s;
 }
 
